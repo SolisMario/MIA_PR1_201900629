@@ -1,0 +1,15 @@
+SELECT COUNT(*) AS clasificacion_pelicula FROM clasificacion_pelicula;
+SELECT COUNT(*) AS pelicula FROM pelicula;
+SELECT COUNT(*) AS actor FROM actor;
+SELECT COUNT(*) AS reparto_pelicula FROM reparto_pelicula;
+SELECT COUNT(*) AS idioma FROM idioma;
+SELECT COUNT(*) AS doblaje_pelicula FROM doblaje_pelicula;
+SELECT COUNT(*) AS categoria FROM categoria;
+SELECT COUNT(*) AS categoria_pelicula FROM categoria_pelicula;
+SELECT COUNT(*) AS pais FROM pais;
+SELECT COUNT(*) AS ciudad FROM ciudad;
+SELECT COUNT(*) AS tienda FROM tienda;
+SELECT COUNT(*) AS inventario FROM inventario;
+SELECT COUNT(*) AS cliente FROM cliente;
+SELECT COUNT(*) AS empleado FROM empleado;
+SELECT COUNT(*) AS renta FROM renta;
