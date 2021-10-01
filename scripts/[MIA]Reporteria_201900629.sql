@@ -7,17 +7,21 @@ FROM
         ON p.id_pelicula = i.PELICULA_id) sub
 WHERE titulo = 'SUGAR WONKA';
 --
-SELECT nombre,
-         (cast(total_pago as float))
-FROM 
-    (SELECT c.id_cliente,
-         c.nombre,
-         count(*) AS conteo,
-         sum(r.monto_pago) AS total_pago
-    FROM cliente c
-    INNER JOIN renta r
-        ON c.id_cliente = r.CLIENTE_id
-    GROUP BY  id_cliente, nombre) sub
+SELECT  split_part(nombre,' ','1') AS nombre
+       ,split_part(nombre,' ','2') AS apellido
+       ,(cast(total_pago           AS float))
+FROM
+(
+	SELECT  c.id_cliente
+	       ,c.nombre
+	       ,COUNT(*)          AS conteo
+	       ,SUM(r.monto_pago) AS total_pago
+	FROM cliente c
+	INNER JOIN renta r
+	ON c.id_cliente = r.CLIENTE_id
+	GROUP BY  id_cliente
+	         ,nombre
+) sub
 WHERE conteo >= 40;
 --
 SELECT a.nombre || ' ' || a.apellido AS nombre_actor
