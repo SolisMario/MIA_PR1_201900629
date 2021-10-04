@@ -29,7 +29,7 @@ FROM actor a
 WHERE a.apellido similar to '%(s|S)(o|O)(n|N)%'
 ORDER BY  a.nombre asc;
 --
-SELECT DISTINCT a.nombre,
+SELECT a.nombre,
          a.apellido,
          p.ano_lanzamiento
 FROM actor a
